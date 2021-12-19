@@ -16,6 +16,7 @@ public class AlbumDAO {
     session.save(artist);
     session.getTransaction().commit();
     session.close();
+
   }
   public List<Album> getAll(){
     Session session=HibernateUtil.getSessionFactory().openSession();
@@ -53,4 +54,14 @@ public class AlbumDAO {
     session.close();
   }
 
+  public List<Album> findByArtist(String name) {
+    Session session = HibernateUtil.getSessionFactory().openSession();
+    session.beginTransaction();
+    Query query = session.createQuery("from Album where artist.name = :name");
+    query.setParameter("name", name);
+    List<Album> artist = query.list();
+    session.getTransaction().commit();
+    session.close();
+    return artist;
+  }
 }

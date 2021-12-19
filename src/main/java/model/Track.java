@@ -1,29 +1,49 @@
 package model;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "artist", schema = "public")
+@Table(name = "track", schema = "public")
 public class Track {
-//  ID SERIAL PRIMARY KEY,
-//  NAME varchar(256) NOT NULL,
-//  TIME INTEGER NOT NULL,
-//  ALBUM_ID INTEGER NOT NULL,
-//  Artist_ID;
 
+  @Id
+  @Column(name = "id")
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private int id;
+
+  @Basic
+  @Column(name = "name")
   private String name;
+
+  @Basic
+  @Column(name = "time")
   private int time;
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   @JoinColumn(name = "artist_id", referencedColumnName = "id")
   private Artist artist;
+
+  @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  @JoinColumn(name = "album_id", referencedColumnName = "id")
+  private Album album;
+
+  public Album getAlbum() {
+    return album;
+  }
+
+  public void setAlbum(Album album) {
+    this.album = album;
+  }
 
   public Artist getArtist() {
     return artist;
@@ -33,8 +53,7 @@ public class Track {
     this.artist = artist;
   }
 
-  @Id
-  @Column(name = "id")
+
   public int getId() {
     return id;
   }
@@ -43,8 +62,7 @@ public class Track {
     this.id = id;
   }
 
-  @Basic
-  @Column(name = "name")
+
   public String getName() {
     return name;
   }
@@ -53,8 +71,7 @@ public class Track {
     this.name = name;
   }
 
-  @Basic
-  @Column(name = "time")
+
   public int getTime() {
     return time;
   }

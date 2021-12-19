@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script type="text/javascript">
+
+  </script>
+  <SCRIPT language="JavaScript" type="text/javascript">
+    $(document).ready(function () {
+      $('#bttHello').click(function () {
+        var fullname = $('#fullname').val();
+        $.ajax({
+          type:'POST',
+          data: {fullname: fullname},
+          url:'AjaxController',
+          success: function (result) {
+              $('#result1').html(result);
+          }
+        });
+      });
+    });
+    var xmlHttpRequest = new xmlHttpRequest();
+
+    function findTopics() {
+      xmlHttpRequest.open("get", "")
+
+    }
+
+  </SCRIPT>
+</head>
+<body>
+<fieldset>
+  <legend>Demo 1</legend>
+</fieldset>
+
+<fieldset>
+  <legend>Demo 2</legend>
+  <form>
+    <input type="text" id="number1"><br>
+    <input type="button" value="Hello" id="bttHello"> <br> <span id="result1"></span>
+  </form>
+</fieldset>
+<input type="text" id="topic">
+<button type="button" onclick="findTopics()">Find</button>
+<table id="tutor_table"></table>
+</body>
+</html>

@@ -3,13 +3,45 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
   version="3.1">
+<!--  <servlet>-->
+<!--    <servlet-name>SaveServlet</servlet-name>-->
+<!--    <servlet-class>servlet.SaveServlet</servlet-class>-->
+<!--  </servlet>-->
+
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>SaveServlet</servlet-name>-->
+<!--    <url-pattern>/save</url-pattern>-->
+<!--  </servlet-mapping>-->
+
   <servlet>
-    <servlet-name>SaveServlet</servlet-name>
-    <servlet-class>servlet.SaveServlet</servlet-class>
+    <servlet-name>SaveAllServlet</servlet-name>
+    <servlet-class>servlet.SaveAllServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>SaveServlet</servlet-name>
-    <url-pattern>/save</url-pattern>
+    <servlet-name>SaveAllServlet</servlet-name>
+    <url-pattern>/save_all</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>FindAlbumByArtistServlet</servlet-name>
+    <servlet-class>servlet.FindAlbumByArtistServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>FindAlbumByArtistServlet</servlet-name>
+    <url-pattern>/album</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>FindTrackByArtistServlet</servlet-name>
+    <servlet-class>servlet.FindTrackByArtistServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>FindTrackByArtistServlet</servlet-name>
+    <url-pattern>/track</url-pattern>
+  </servlet-mapping>
+
+
 </web-app>

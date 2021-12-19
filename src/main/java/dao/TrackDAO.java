@@ -1,5 +1,6 @@
 package dao;
 import java.util.List;
+import model.Album;
 import model.Artist;
 import model.Track;
 import org.hibernate.Session;
@@ -49,6 +50,17 @@ public class TrackDAO {
     session.delete(track);
     session.getTransaction().commit();
     session.close();
+  }
+
+  public List<Track> findByArtist(String name) {
+    Session session = HibernateUtil.getSessionFactory().openSession();
+    session.beginTransaction();
+    Query query = session.createQuery("from Track where artist.name = :name");
+    query.setParameter("name", name);
+    List<Track> artist = query.list();
+    session.getTransaction().commit();
+    session.close();
+    return artist;
   }
 
 }

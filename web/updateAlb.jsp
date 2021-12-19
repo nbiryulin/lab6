@@ -13,10 +13,11 @@
 </head>
 <body>
 <form method="post" action="/lab6_war_exploded/save_all">
-  <input type="text" name="id" readonly="readonly" value="<c:out value="${artist.id}"/>">
-  <input type="text" name="name" value="<c:out value="${artist.name}"/>">
-  <input type="submit" value="ok" name="update">
-    <input type="hidden" value="art" name="types">
+    <input type="text" name="id" readonly="readonly" value="<c:out value="${album.id}"/>">
+    <input type="text" name="name" value="<c:out value="${album.name}"/>">
+    <input type="text" name="type" value="<c:out value="${album.type}"/>">
+    <input type="submit" value="ok" name="update">
+    <input type="hidden" value="alb" name="types">
 </form>
 </body>
 </html>
