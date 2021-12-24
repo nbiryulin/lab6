@@ -20,8 +20,6 @@ public class Artist {
   public Artist() {
   }
 
-  //  ID SERIAL PRIMARY KEY ,
-//  NAME varchar(256) NOT NULL
   @Id
   @Column(name = "id")
   @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -30,28 +28,6 @@ public class Artist {
   @Basic
   @Column(name = "name")
   private String name;
-
-//  @OneToMany(mappedBy = "artist", orphanRemoval = true, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//  private List<Album> albums;
-//
-//  @OneToMany(mappedBy = "artist", orphanRemoval = true, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//  private List<Track> tracks;
-
-//  public List<Album> getAlbums() {
-//    return albums;
-//  }
-//
-//  public void setAlbums(List<Album> albums) {
-//    this.albums = albums;
-//  }
-//
-//  public List<Track> getTracks() {
-//    return tracks;
-//  }
-//
-//  public void setTracks(List<Track> tracks) {
-//    this.tracks = tracks;
-//  }
 
   public int getId() {
     return id;
@@ -69,21 +45,4 @@ public class Artist {
   public void setName(String name) {
     this.name = name;
   }
-//
-//  @Override
-//  public boolean equals(Object o) {
-//    if (this == o) {
-//      return true;
-//    }
-//    if (o == null || getClass() != o.getClass()) {
-//      return false;
-//    }
-//    Artist atrist = (Artist) o;
-//    return id == atrist.id && Objects.equals(name, atrist.name);
-//  }
-//
-//  @Override
-//  public int hashCode() {
-//    return Objects.hash(id, name);
-//  }
 }

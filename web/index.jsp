@@ -59,7 +59,7 @@
     <input type="submit" name="showAll" value="showAll">
     <br>
     <input type="text" name="track_name" placeholder="track name">
-    <input type="text" name="time" placeholder="time">
+    <input type="number" name="time" placeholder="time">
     <input type="text" name="artist_id" placeholder="artist id">
     <input type="text" name="album_id" placeholder="album id">
     <input type="submit" name="add" value="addTrack">

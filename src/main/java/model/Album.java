@@ -1,7 +1,6 @@
 package model;
 
 import java.util.List;
-import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -79,22 +78,5 @@ public class Album {
     this.type = type;
   }
 
-//  @Override
-//  public boolean equals(Object o) {
-//    if (this == o) {
-//      return true;
-//    }
-//    if (o == null || getClass() != o.getClass()) {
-//      return false;
-//    }
-//    Album album = (Album) o;
-//    return id == album.id && Objects.equals(name, album.name) && Objects.equals(
-//        type, album.type) && Objects.equals(artist, album.artist);
-//  }
-//
-//  @Override
-//  public int hashCode() {
-//    return Objects.hash(id, name, type, artist);
-//  }
 
 }
